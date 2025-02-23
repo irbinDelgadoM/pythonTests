@@ -9,7 +9,9 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                pip3 install -r requires
+                python3 -m venv venv
+                . venv/bin/activate
+                pip3.12 install -r requires
                 '''
             }
         }
